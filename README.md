@@ -13,3 +13,4 @@ Extension to Ultimate Member for User Role Promotions in the frontend Profile Pa
 
 ## Updates
 1. Version 1.0.0
+2. Version 1.1.0 Code update to avoid a PHP Warning.
