@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Promote Users Role
  * Description:     Extension to Ultimate Member for User Role Promotions in the frontend Profile Page with Roles dropdown made by Users with WP 'promote_users' capability like a site Administrator.
- * Version:         1.1.0
+ * Version:         1.2.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -39,7 +39,7 @@ class UM_Promote_Users_Role {
 
     public function um_user_edit_profile_fields_promote_users_role( $fields, $args ) {
 
-        if ( current_user_can( 'promote_users' ) && $args['mode'] == 'profile' && in_array( $args['form_id'], $this->form_ids ) ) {
+        if ( current_user_can( 'promote_users' ) && in_array( $args['form_id'], $this->form_ids ) ) {
 
             if ( isset( $_POST['role'] ) && ! empty( $_POST['role'] ) ) {
 
