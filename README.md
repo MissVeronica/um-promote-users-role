@@ -14,5 +14,7 @@ Extension to Ultimate Member for User Role Promotions in the frontend Profile Pa
 ## Updates
 1. Version 1.0.0
 2. Version 1.1.0 Code update to avoid a PHP Warning.
-3. Download the ZIP file and install as a WP Plugin
+3. Version 1.2.0 Update for UM 2.6.7
 
+## Installation
+Download the zip file and install as a WP Plugin, activate the plugin.
