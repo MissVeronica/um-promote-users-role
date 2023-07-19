@@ -10,6 +10,7 @@ Extension to Ultimate Member for User Role Promotions in the frontend Profile Pa
 2. Version 1.1.0 Code update to avoid a PHP Warning.
 3. Version 1.2.0 Update for UM 2.6.7
 4. Version 2.0.0 Rewrite for UM 2.6.7
+5. Version 2.1.0 Additional Role test and tested for UM 2.6.8
 
 ## Error messages
 1. This is not possible for security reasons.
