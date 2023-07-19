@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Promote Users Role
  * Description:     Extension to Ultimate Member for User Role Promotions in the frontend Profile Page with Roles dropdown made by Users with WP 'promote_users' capability like a site Administrator.
- * Version:         2.0.0
+ * Version:         2.1.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -10,7 +10,7 @@
  * Author URI:      https://github.com/MissVeronica
  * Text Domain:     ultimate-member
  * Domain Path:     /languages
- * UM version:      2.6.7
+ * UM version:      2.6.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -69,9 +69,11 @@ class UM_Promote_Users_Role {
 
                         $new_role = UM()->roles()->set_role( $user_id, $role );
 
-                        if ( ! in_array( $new_role, UM()->roles()->get_editable_user_roles(), true ) ) {
+                        if ( empty( $new_role ) || ! in_array( $new_role, UM()->roles()->get_editable_user_roles(), true ) ) {
 
-                            UM()->roles()->remove_role( $user_id, $new_role );
+                            if ( ! empty( $new_role ) ) {
+                                UM()->roles()->remove_role( $user_id, $new_role );
+                            }
                             wp_die( esc_html__( 'Setting new role failed.', 'ultimate-member' ) );
                         }
 
