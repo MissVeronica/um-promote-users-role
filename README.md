@@ -11,6 +11,7 @@ Extension to Ultimate Member for User Role Promotions in the frontend Profile Pa
 3. Version 1.2.0 Update for UM 2.6.7
 4. Version 2.0.0 Rewrite for UM 2.6.7
 5. Version 2.1.0 Additional Role test and tested for UM 2.6.8
+6. Version 2.2.0 Addition of Misc tab removed by UM in version 2.8.3
 
 ## Error messages
 1. This is not possible for security reasons.
