@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Promote Users Role
  * Description:     Extension to Ultimate Member for User Role Promotions in the frontend Profile Page with Roles dropdown made by Users with WP 'promote_users' capability like a site Administrator.
- * Version:         2.2.0
+ * Version:         2.3.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -88,21 +88,26 @@ class UM_Promote_Users_Role {
 
     public function um_settings_structure_promote_users_role( $settings_structure ) {
 
-        if ( ! isset( $settings_structure['misc'] )) {
-            $settings_structure['misc'] = array( 'title'       => __( 'Misc', 'ultimate-member' ),
-                                                 'description' => __( 'Old UM Miscellaneous tab now only used for some free Plugins (UM 2.8.3)', 'ultimate-member' ));
+        if ( ! isset( $settings_structure['misc']['title'] )) {
+            $settings_structure['misc']['title']                 = __( 'Misc', 'ultimate-member' );
+            $settings_structure['misc']['sections']['']['title'] = __( 'Old UM Miscellaneous tab now only used for some free Plugins (from UM 2.8.3)', 'ultimate-member' );
         }
 
-        $settings_structure['misc']['fields'][] = array( 'id'           => 'promote_users_role_enable',
+        $settings_structure['misc']['sections']['']['form_sections']['promote']['title']       = __( 'Promote Users Role', 'ultimate-member' );
+        $settings_structure['misc']['sections']['']['form_sections']['promote']['description'] = __( 'Plugin version 2.3.0 - tested with UM 2.8.3', 'ultimate-member' );
+
+        $settings_structure['misc']['sections']['']['form_sections']['promote']['fields'][] = array( 
+                                                         'id'           => 'promote_users_role_enable',
                                                          'type'         => 'checkbox',
-                                                         'label'        => __( "Promote Users Role - Tick to enable", 'ultimate-member' ),
-                                                         'tooltip'      => __( "Enable or disable the Admin frontend Role promotions.", 'ultimate-member' ),
+                                                         'label'        => __( "Tick to enable", 'ultimate-member' ),
+                                                         'description'  => __( "Enable or disable the Admin frontend Role promotions.", 'ultimate-member' ),
                                                         );
 
-        $settings_structure['misc']['fields'][] = array( 'id'           => 'promote_users_role_form_ids',
+        $settings_structure['misc']['sections']['']['form_sections']['promote']['fields'][] = array( 
+                                                         'id'           => 'promote_users_role_form_ids',
                                                          'type'         => 'text',
-                                                         'label'        => __( "Promote Users Role - Profile Form IDs", 'ultimate-member' ),
-                                                         'tooltip'      => __( "Comma separated Profile Form IDs where frontend Role promotions are allowed.", 'ultimate-member' ),
+                                                         'label'        => __( "Profile Form IDs", 'ultimate-member' ),
+                                                         'description'  => __( "Comma separated Profile Form IDs where frontend Role promotions are allowed.", 'ultimate-member' ),
                                                          'size'         => 'medium',
                                                          'conditional'  => array( 'promote_users_role_enable', '=', 1 ),
                                                          );
@@ -113,3 +118,4 @@ class UM_Promote_Users_Role {
 }
 
 new UM_Promote_Users_Role();
+
